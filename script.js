@@ -1,3 +1,4 @@
+const balls = [];
 class Ball {
     static #numberOfBalls = 1;
     #ball;
@@ -80,13 +81,13 @@ class Ball {
 }
 
 document.addEventListener('keydown', function (event) {
-    setBallCounter()
-    new Ball()
+    setBallCounter();
+    balls.push(new Ball());
 });
 
 document.addEventListener('touchstart', function (event) {
-    setBallCounter()
-    new Ball()
+    setBallCounter();
+    balls.push(new Ball());
 });
 
 function setBallCounter() {
