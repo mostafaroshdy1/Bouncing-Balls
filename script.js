@@ -3,17 +3,19 @@ class Ball {
     #locationX;
     #locationY;
     #ball;
-    #speedX = 10;
-    #speedY = 10;
+    #speedX;
+    #speedY;
 
 
 
     constructor() {
         Ball.#numberOfBalls++;
+        this.#speedX = 10;
+        this.#speedY = 10;
         this.#ball = document.createElement("img")
         this.#ball.classList.add("ball");
         this.#ball.src = "ball.png"
-        document.querySelector("body").append(this.#ball);
+        document.querySelector("body").appendChild(this.#ball);
         this.moveAround();
     }
     static get numberOfBalls() {
@@ -32,7 +34,6 @@ class Ball {
     moveAround() {
         const move = () => {
             // Reverse direction if the ball reaches the window edges
-            console.log(this.locationX);
             if (this.locationX + this.ball.width >= window.innerWidth || this.locationX < 0) {
                 this.#speedX *= -1;
             }
@@ -53,3 +54,6 @@ class Ball {
 
 }
 const ball1 = new Ball();
+const ball2 = new Ball();
+const ball3 = new Ball();
+
